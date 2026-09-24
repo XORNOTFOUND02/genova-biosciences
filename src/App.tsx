@@ -6,6 +6,7 @@ import {
   Play,
 } from 'lucide-react';
 import Solutions from './Solutions';
+import About from './About';
 import './index.css';
 
 /* ============================================
@@ -47,9 +48,9 @@ function Navbar() {
           </a>
         </li>
         <li>
-          <a href="#about" className="nav-link">
+          <Link to="/about" className="nav-link">
             About Us
-          </a>
+          </Link>
         </li>
         <li>
           <a href="#careers" className="nav-link">
@@ -99,7 +100,7 @@ function Footer() {
           </div>
           <div className="footer-col">
             <h4>Company</h4>
-            <a href="#about">About Us</a>
+            <Link to="/about">About Us</Link>
             <a href="#careers">Careers</a>
             <a href="#research">Research</a>
             <a href="#news">News</a>
@@ -198,6 +199,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/solutions" element={<Solutions />} />
+          <Route path="/about" element={<About />} />
         </Routes>
         <Footer />
       </div>
