@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import {
   ArrowRight,
   Cpu,
@@ -177,13 +178,13 @@ export default function Technology() {
             Genova technology integrates into your existing workflows.
           </p>
           <div className="tech-cta-actions">
-            <a href="#contact" className="btn-primary">
+            <Link to="/contact" className="btn-primary">
               Request a Demo
               <ArrowRight className="arrow-icon" size={18} strokeWidth={2} />
-            </a>
-            <a href="#research" className="btn-secondary">
+            </Link>
+            <Link to="/research" className="btn-secondary">
               View Research
-            </a>
+            </Link>
           </div>
         </div>
       </section>

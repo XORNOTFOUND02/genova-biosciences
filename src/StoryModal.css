@@ -1,0 +1,87 @@
+/* ============================================
+   Story Modal — Styles
+   ============================================ */
+
+.story-modal {
+  border: none;
+  padding: 0;
+  background: transparent;
+  max-width: min(900px, 92vw);
+  width: 100%;
+  overflow: visible;
+}
+
+.story-modal::backdrop {
+  background: rgba(10, 25, 47, 0.75);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.story-modal-inner {
+  position: relative;
+  background: #0a192f;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
+  animation: fadeInUp 0.3s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+.story-modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #ffffff;
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: background 0.2s ease;
+}
+
+.story-modal-close:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.story-modal-video-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #000000;
+}
+
+.story-modal-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.story-modal-caption {
+  padding: 1.5rem 2rem;
+  color: #ffffff;
+}
+
+.story-modal-caption h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+}
+
+.story-modal-caption p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+@media (max-width: 768px) {
+  .story-modal-caption {
+    padding: 1.25rem;
+  }
+}

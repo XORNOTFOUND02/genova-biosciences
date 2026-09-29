@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import {
   ArrowRight,
   Microscope,
@@ -115,10 +116,10 @@ export default function Solutions() {
                   <li key={feature}>{feature}</li>
                 ))}
               </ul>
-              <a href="#contact" className="solution-card-link">
+              <Link to="/contact" className="solution-card-link">
                 Learn More
                 <ArrowRight size={16} strokeWidth={2} />
-              </a>
+              </Link>
             </article>
           ))}
         </div>
@@ -135,13 +136,13 @@ export default function Solutions() {
             can support your next breakthrough.
           </p>
           <div className="solutions-cta-actions">
-            <a href="#contact" className="btn-primary">
+            <Link to="/contact" className="btn-primary">
               Get in Touch
               <ArrowRight className="arrow-icon" size={18} strokeWidth={2} />
-            </a>
-            <a href="#about" className="btn-secondary">
+            </Link>
+            <Link to="/about" className="btn-secondary">
               About Genova
-            </a>
+            </Link>
           </div>
         </div>
       </section>

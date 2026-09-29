@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import {
   ArrowRight,
   BookOpen,
@@ -230,13 +231,13 @@ export default function Research() {
             human health.
           </p>
           <div className="research-cta-actions">
-            <a href="#contact" className="btn-primary">
+            <Link to="/contact" className="btn-primary">
               Propose a Collaboration
               <ArrowRight className="arrow-icon" size={18} strokeWidth={2} />
-            </a>
-            <a href="#technology" className="btn-secondary">
+            </Link>
+            <Link to="/technology" className="btn-secondary">
               Our Technology
-            </a>
+            </Link>
           </div>
         </div>
       </section>

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import {
   ArrowRight,
   MapPin,
@@ -153,10 +154,10 @@ export default function Careers() {
                   ))}
                 </div>
               </div>
-              <a href="#apply" className="careers-role-apply">
+              <Link to="/contact" className="careers-role-apply">
                 Apply
                 <ArrowRight size={16} strokeWidth={2} />
-              </a>
+              </Link>
             </article>
           ))}
         </div>
@@ -234,13 +235,13 @@ export default function Careers() {
             and tell us how you would like to contribute.
           </p>
           <div className="careers-cta-actions">
-            <a href="#contact" className="btn-primary">
+            <Link to="/contact" className="btn-primary">
               Send Your Resume
               <ArrowRight className="arrow-icon" size={18} strokeWidth={2} />
-            </a>
-            <a href="#about" className="btn-secondary">
+            </Link>
+            <Link to="/about" className="btn-secondary">
               About Genova
-            </a>
+            </Link>
           </div>
         </div>
       </section>

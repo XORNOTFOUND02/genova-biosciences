@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { BrowserRouter, Routes, Route, Link, useLocation } from 'react-router-dom';
 import {
   Dna,
@@ -10,6 +11,8 @@ import About from './About';
 import Technology from './Technology';
 import Research from './Research';
 import Careers from './Careers';
+import Contact from './Contact';
+import StoryModal from './StoryModal';
 import './index.css';
 
 /* ============================================
@@ -63,10 +66,10 @@ function Navbar() {
       </ul>
 
       {/* CTA */}
-      <a href="#contact" className="nav-cta">
+      <Link to="/contact" className="nav-cta">
         Contact Us
         <ArrowRight className="arrow-icon" size={18} strokeWidth={2} />
-      </a>
+      </Link>
     </nav>
   );
 }
@@ -96,23 +99,23 @@ function Footer() {
         <div className="footer-links">
           <div className="footer-col">
             <h4>Solutions</h4>
-            <a href="#genomic">Genomic Sequencing</a>
-            <a href="#drug">Drug Discovery</a>
-            <a href="#gene">Gene Therapy</a>
-            <a href="#diagnostics">Diagnostics</a>
+            <Link to="/solutions">Genomic Sequencing</Link>
+            <Link to="/solutions">Drug Discovery</Link>
+            <Link to="/solutions">Gene Therapy</Link>
+            <Link to="/solutions">Diagnostics</Link>
           </div>
           <div className="footer-col">
             <h4>Company</h4>
             <Link to="/about">About Us</Link>
             <Link to="/careers">Careers</Link>
             <Link to="/research">Research</Link>
-            <a href="#news">News</a>
+            <Link to="/research">News</Link>
           </div>
           <div className="footer-col">
             <h4>Connect</h4>
-            <a href="#contact">Contact</a>
-            <a href="#support">Support</a>
-            <a href="#partner">Partnerships</a>
+            <Link to="/contact">Contact</Link>
+            <Link to="/contact">Support</Link>
+            <Link to="/contact">Partnerships</Link>
           </div>
         </div>
       </div>
@@ -128,6 +131,8 @@ function Footer() {
    Home Page
    ============================================ */
 function Home() {
+  const [storyOpen, setStoryOpen] = useState(false);
+
   return (
     <>
       {/* ---------- Video Background ---------- */}
@@ -178,15 +183,21 @@ function Home() {
               <ArrowRight className="arrow-icon" size={18} strokeWidth={2} />
             </Link>
 
-            <a href="#story" className="btn-secondary">
+            <button
+              type="button"
+              className="btn-secondary"
+              onClick={() => setStoryOpen(true)}
+            >
               <span className="play-icon-wrapper" aria-hidden="true">
                 <Play className="play-icon" size={12} strokeWidth={2.5} />
               </span>
               Watch Our Story
-            </a>
+            </button>
           </div>
         </div>
       </main>
+
+      <StoryModal isOpen={storyOpen} onClose={() => setStoryOpen(false)} />
     </>
   );
 }
@@ -206,6 +217,7 @@ function App() {
           <Route path="/technology" element={<Technology />} />
           <Route path="/research" element={<Research />} />
           <Route path="/careers" element={<Careers />} />
+          <Route path="/contact" element={<Contact />} />
         </Routes>
         <Footer />
       </div>

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import {
   ArrowRight,
   Target,
@@ -242,13 +243,13 @@ export default function About() {
             would love to hear from you.
           </p>
           <div className="about-cta-actions">
-            <a href="#contact" className="btn-primary">
+            <Link to="/contact" className="btn-primary">
               Get in Touch
               <ArrowRight className="arrow-icon" size={18} strokeWidth={2} />
-            </a>
-            <a href="#careers" className="btn-secondary">
+            </Link>
+            <Link to="/careers" className="btn-secondary">
               View Careers
-            </a>
+            </Link>
           </div>
         </div>
       </section>
