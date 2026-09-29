@@ -328,3 +328,10 @@
     justify-content: center;
   }
 }
+
+/* --- Featured first card (editorial asymmetry) --- */
+@media (min-width: 769px) {
+  .solution-card:first-child {
+    grid-column: span 2;
+  }
+}

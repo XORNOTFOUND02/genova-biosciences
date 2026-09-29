@@ -338,3 +338,14 @@
   .tech-cta-actions .btn-primary,
   .tech-cta-actions .btn-secondary { width: 100%; justify-content: center; }
 }
+
+/* --- Featured first capability + offset middle platform (editorial asymmetry) --- */
+@media (min-width: 769px) {
+  .tech-capability-card:first-child {
+    grid-column: span 2;
+  }
+
+  .tech-platform-card:nth-child(2) {
+    margin-top: 1.75rem;
+  }
+}

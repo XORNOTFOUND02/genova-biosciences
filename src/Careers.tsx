@@ -187,6 +187,28 @@ export default function Careers() {
         </div>
       </section>
 
+      {/* ---- CTA (placed mid-page, before culture) ---- */}
+      <section className="careers-cta">
+        <div className="careers-cta-content">
+          <h2 className="careers-cta-title">
+            Do not see your role listed?
+          </h2>
+          <p className="careers-cta-desc">
+            We are always looking for exceptional talent. Send us your resume
+            and tell us how you would like to contribute.
+          </p>
+          <div className="careers-cta-actions">
+            <Link to="/contact?subject=Careers" className="btn-primary">
+              Send Your Resume
+              <ArrowRight className="arrow-icon" size={18} strokeWidth={2} />
+            </Link>
+            <Link to="/about" className="btn-secondary">
+              About Genova
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* ---- Culture ---- */}
       <section className="careers-culture">
         <div className="careers-culture-content">
@@ -223,28 +245,6 @@ export default function Careers() {
               <span className="careers-culture-stat-value">94%</span>
               <span className="careers-culture-stat-label">Retention Rate</span>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ---- CTA ---- */}
-      <section className="careers-cta">
-        <div className="careers-cta-content">
-          <h2 className="careers-cta-title">
-            Do not see your role listed?
-          </h2>
-          <p className="careers-cta-desc">
-            We are always looking for exceptional talent. Send us your resume
-            and tell us how you would like to contribute.
-          </p>
-          <div className="careers-cta-actions">
-            <Link to="/contact?subject=Careers" className="btn-primary">
-              Send Your Resume
-              <ArrowRight className="arrow-icon" size={18} strokeWidth={2} />
-            </Link>
-            <Link to="/about" className="btn-secondary">
-              About Genova
-            </Link>
           </div>
         </div>
       </section>

@@ -198,28 +198,7 @@ export default function Research() {
         </div>
       </section>
 
-      {/* ---- Publications ---- */}
-      <section className="research-publications">
-        <div className="research-section-header">
-          <span className="research-section-label">Selected Publications</span>
-          <h2 className="research-section-title">Peer-reviewed contributions.</h2>
-        </div>
-        <div className="research-pubs-list">
-          {publications.map((pub) => (
-            <article className="research-pub-card" key={pub.doi}>
-              <div className="research-pub-meta">
-                <span className="research-pub-journal">{pub.journal}</span>
-                <span className="research-pub-year">{pub.year}</span>
-              </div>
-              <h3 className="research-pub-title">{pub.title}</h3>
-              <p className="research-pub-authors">{pub.authors}</p>
-              <span className="research-pub-doi">DOI: {pub.doi}</span>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      {/* ---- CTA ---- */}
+      {/* ---- CTA (placed mid-page, before publications) ---- */}
       <section className="research-cta">
         <div className="research-cta-content">
           <h2 className="research-cta-title">
@@ -239,6 +218,27 @@ export default function Research() {
               Our Technology
             </Link>
           </div>
+        </div>
+      </section>
+
+      {/* ---- Publications ---- */}
+      <section className="research-publications">
+        <div className="research-section-header">
+          <span className="research-section-label">Selected Publications</span>
+          <h2 className="research-section-title">Peer-reviewed contributions.</h2>
+        </div>
+        <div className="research-pubs-list">
+          {publications.map((pub) => (
+            <article className="research-pub-card" key={pub.doi}>
+              <div className="research-pub-meta">
+                <span className="research-pub-journal">{pub.journal}</span>
+                <span className="research-pub-year">{pub.year}</span>
+              </div>
+              <h3 className="research-pub-title">{pub.title}</h3>
+              <p className="research-pub-authors">{pub.authors}</p>
+              <span className="research-pub-doi">DOI: {pub.doi}</span>
+            </article>
+          ))}
         </div>
       </section>
     </div>

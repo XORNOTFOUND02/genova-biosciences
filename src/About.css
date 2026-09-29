@@ -559,3 +559,16 @@
     justify-content: center;
   }
 }
+
+/* --- Editorial asymmetry: staggered values, left-aligned hero --- */
+@media (min-width: 1025px) {
+  .about-value-card:nth-child(even) {
+    margin-top: 1.75rem;
+  }
+}
+
+.about-hero {
+  text-align: left;
+  margin: 0;
+  max-width: 860px;
+}

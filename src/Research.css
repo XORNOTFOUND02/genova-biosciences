@@ -422,3 +422,15 @@
   .research-cta-actions .btn-primary,
   .research-cta-actions .btn-secondary { width: 100%; justify-content: center; }
 }
+
+/* --- Featured first focus card spans full row --- */
+.research-focus-card:first-child {
+  grid-column: 1 / -1;
+}
+
+/* --- Left-aligned hero (deliberate asymmetry) --- */
+.research-hero {
+  text-align: left;
+  margin: 0;
+  max-width: 860px;
+}
