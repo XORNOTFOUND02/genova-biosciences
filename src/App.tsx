@@ -7,6 +7,9 @@ import {
 } from 'lucide-react';
 import Solutions from './Solutions';
 import About from './About';
+import Technology from './Technology';
+import Research from './Research';
+import Careers from './Careers';
 import './index.css';
 
 /* ============================================
@@ -24,8 +27,8 @@ function Navbar() {
           <Dna size={24} strokeWidth={2} />
         </span>
         <span className="logo-text">
-          <span className="logo-name">Genova</span>
-          <span className="logo-subtitle">Biosciences</span>
+          <span className="logo-name">Doctor name</span>
+          <span className="logo-subtitle">Doctor Clinic</span>
         </span>
       </Link>
 
@@ -38,14 +41,14 @@ function Navbar() {
           </Link>
         </li>
         <li>
-          <a href="#technology" className="nav-link">
+          <Link to="/technology" className="nav-link">
             Technology
-          </a>
+          </Link>
         </li>
         <li>
-          <a href="#research" className="nav-link">
+          <Link to="/research" className="nav-link">
             Research
-          </a>
+          </Link>
         </li>
         <li>
           <Link to="/about" className="nav-link">
@@ -53,9 +56,9 @@ function Navbar() {
           </Link>
         </li>
         <li>
-          <a href="#careers" className="nav-link">
+          <Link to="/careers" className="nav-link">
             Careers
-          </a>
+          </Link>
         </li>
       </ul>
 
@@ -101,8 +104,8 @@ function Footer() {
           <div className="footer-col">
             <h4>Company</h4>
             <Link to="/about">About Us</Link>
-            <a href="#careers">Careers</a>
-            <a href="#research">Research</a>
+            <Link to="/careers">Careers</Link>
+            <Link to="/research">Research</Link>
             <a href="#news">News</a>
           </div>
           <div className="footer-col">
@@ -200,6 +203,9 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/solutions" element={<Solutions />} />
           <Route path="/about" element={<About />} />
+          <Route path="/technology" element={<Technology />} />
+          <Route path="/research" element={<Research />} />
+          <Route path="/careers" element={<Careers />} />
         </Routes>
         <Footer />
       </div>

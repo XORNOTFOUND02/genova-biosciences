@@ -1,0 +1,340 @@
+/* ============================================
+   Technology Page — Styles
+   ============================================ */
+
+.tech-section-label {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  margin-bottom: 0.75rem;
+}
+
+.tech-section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--color-text-primary);
+}
+
+.tech-section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+/* ---- Hero ---- */
+.tech-hero {
+  padding: 6rem var(--spacing-hero-x) 4rem;
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.tech-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background-color: var(--color-chip-bg);
+  border-radius: 9999px;
+  margin-bottom: 1.5rem;
+  animation: fadeInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+.tech-chip-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--color-primary);
+}
+
+.tech-chip-text {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--color-chip-text);
+}
+
+.tech-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--color-text-primary);
+  margin-bottom: 1.5rem;
+  animation: fadeInUp 0.6s 0.1s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+.tech-title .highlight {
+  color: var(--color-primary);
+}
+
+.tech-subtitle {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: var(--color-text-secondary);
+  max-width: 700px;
+  margin: 0 auto;
+  animation: fadeInUp 0.6s 0.2s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+/* ---- Platforms ---- */
+.tech-platforms {
+  padding: 3rem var(--spacing-hero-x) 4rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.tech-platforms-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.tech-platform-card {
+  background: #ffffff;
+  border: 1px solid var(--color-divider);
+  border-radius: 16px;
+  padding: 2rem;
+  transition: all 0.2s ease;
+  animation: fadeInUp 0.5s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+.tech-platform-card:nth-child(1) { animation-delay: 0.05s; }
+.tech-platform-card:nth-child(2) { animation-delay: 0.1s; }
+.tech-platform-card:nth-child(3) { animation-delay: 0.15s; }
+
+.tech-platform-card:hover {
+  border-color: var(--color-primary);
+  box-shadow: 0 8px 30px rgba(26, 86, 219, 0.08);
+  transform: translateY(-2px);
+}
+
+.tech-platform-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  background-color: var(--color-primary-light);
+  border-radius: 14px;
+  color: var(--color-primary);
+  margin-bottom: 1.25rem;
+}
+
+.tech-platform-subtitle {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--color-chip-text);
+  margin-bottom: 0.4rem;
+}
+
+.tech-platform-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin-bottom: 0.75rem;
+}
+
+.tech-platform-desc {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--color-text-secondary);
+  margin-bottom: 1.25rem;
+}
+
+.tech-platform-specs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tech-platform-specs span {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.3rem 0.75rem;
+  background-color: var(--color-chip-bg);
+  color: var(--color-chip-text);
+  border-radius: 9999px;
+}
+
+/* ---- Capabilities ---- */
+.tech-capabilities {
+  padding: 3rem var(--spacing-hero-x) 4rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.tech-capabilities-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.tech-capability-card {
+  background: #ffffff;
+  border: 1px solid var(--color-divider);
+  border-radius: 16px;
+  padding: 1.75rem;
+  transition: all 0.2s ease;
+  animation: fadeInUp 0.5s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+.tech-capability-card:nth-child(1) { animation-delay: 0.05s; }
+.tech-capability-card:nth-child(2) { animation-delay: 0.1s; }
+.tech-capability-card:nth-child(3) { animation-delay: 0.15s; }
+.tech-capability-card:nth-child(4) { animation-delay: 0.2s; }
+.tech-capability-card:nth-child(5) { animation-delay: 0.25s; }
+.tech-capability-card:nth-child(6) { animation-delay: 0.3s; }
+
+.tech-capability-card:hover {
+  border-color: var(--color-primary);
+  box-shadow: 0 8px 30px rgba(26, 86, 219, 0.08);
+}
+
+.tech-capability-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background-color: var(--color-primary-light);
+  border-radius: 12px;
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+}
+
+.tech-capability-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.tech-capability-desc {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--color-text-secondary);
+}
+
+/* ---- Timeline ---- */
+.tech-timeline-section {
+  padding: 3rem var(--spacing-hero-x) 4rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.tech-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.tech-timeline-item {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.25rem 0;
+  border-bottom: 1px solid var(--color-divider);
+}
+
+.tech-timeline-item:last-child {
+  border-bottom: none;
+}
+
+.tech-timeline-year {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  min-width: 50px;
+}
+
+.tech-timeline-milestone {
+  font-size: 1rem;
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+}
+
+/* ---- CTA ---- */
+.tech-cta {
+  background: linear-gradient(135deg, #0c2b64 0%, #1a56db 100%);
+  padding: 5rem var(--spacing-hero-x);
+  margin: 0 var(--spacing-hero-x) 4rem;
+  border-radius: 20px;
+}
+
+.tech-cta-content {
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+.tech-cta-title {
+  font-size: 2.25rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+
+.tech-cta-desc {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 2rem;
+}
+
+.tech-cta-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.tech-cta .btn-primary {
+  background-color: #ffffff;
+  color: var(--color-btn-primary);
+}
+
+.tech-cta .btn-primary:hover {
+  background-color: #e0e7ff;
+}
+
+.tech-cta .btn-secondary {
+  background-color: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+  color: #ffffff;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.tech-cta .btn-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.25);
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 1024px) {
+  .tech-title { font-size: 2.75rem; }
+  .tech-platforms-grid { grid-template-columns: repeat(2, 1fr); }
+  .tech-capabilities-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .tech-hero { padding: 4rem var(--spacing-hero-x) 2.5rem; }
+  .tech-title { font-size: 2rem; }
+  .tech-subtitle { font-size: 1rem; }
+  .tech-section-title { font-size: 1.75rem; }
+  .tech-platforms-grid,
+  .tech-capabilities-grid { grid-template-columns: 1fr; }
+  .tech-cta { margin: 0 1rem 3rem; padding: 3rem 1.5rem; }
+  .tech-cta-title { font-size: 1.75rem; }
+  .tech-cta-actions { flex-direction: column; align-items: center; }
+  .tech-cta-actions .btn-primary,
+  .tech-cta-actions .btn-secondary { width: 100%; justify-content: center; }
+}
