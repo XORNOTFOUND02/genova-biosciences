@@ -1,0 +1,128 @@
+/* ============================================
+   Dark Theme — prefers-color-scheme: dark
+   Loaded LAST so these overrides win the cascade.
+   ============================================ */
+
+@media (prefers-color-scheme: dark) {
+  /* ---- Design Tokens ---- */
+  :root {
+    color-scheme: dark;
+
+    --color-primary: #60a5fa;
+    --color-primary-light: rgba(56, 189, 248, 0.15);
+    --color-text-primary: #f1f5f9;
+    --color-text-secondary: #94a3b8;
+    --color-chip-bg: rgba(56, 189, 248, 0.15);
+    --color-chip-text: #7dd3fc;
+    --color-btn-primary: #1d4ed8;
+    --color-btn-primary-hover: #1e40af;
+    --color-divider: rgba(255, 255, 255, 0.1);
+    --color-bg: #0f172a;
+  }
+
+  /* ---- Page Background ---- */
+  body {
+    background-color: #0f172a;
+    color: #f1f5f9;
+  }
+
+  /* ---- Video Overlay: dark gradient for readability ---- */
+  .video-overlay {
+    background: linear-gradient(
+      90deg,
+      rgba(15, 23, 42, 1) 0%,
+      rgba(15, 23, 42, 0.85) 40%,
+      rgba(15, 23, 42, 0) 100%
+    );
+  }
+
+  /* ---- Logo Icon ---- */
+  .logo-icon {
+    background-color: #2563eb;
+  }
+
+  /* ---- Glassmorphism Secondary Button ---- */
+  .btn-secondary {
+    background-color: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.15);
+    color: #f1f5f9;
+  }
+
+  .btn-secondary:hover {
+    background-color: rgba(255, 255, 255, 0.14);
+    border-color: rgba(255, 255, 255, 0.25);
+  }
+
+  .play-icon-wrapper {
+    border-color: #f1f5f9;
+  }
+
+  /* ---- All White Cards -> Dark Cards ---- */
+  .solution-card,
+  .about-mission-card,
+  .about-value-card,
+  .about-team-card,
+  .tech-platform-card,
+  .tech-capability-card,
+  .research-focus-card,
+  .research-trial-card,
+  .research-pub-card,
+  .careers-role-card,
+  .careers-benefit-card,
+  .careers-culture-stat,
+  .contact-form-card {
+    background: #1e293b;
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+
+  /* ---- Timeline dot ring matches page bg ---- */
+  .about-timeline-item::before {
+    border: 3px solid #0f172a;
+  }
+
+  /* ---- Contact form inputs ---- */
+  .contact-field input,
+  .contact-field select,
+  .contact-field textarea {
+    background-color: #0f172a;
+    border-color: rgba(255, 255, 255, 0.15);
+    color: #f1f5f9;
+  }
+
+  .contact-field input::placeholder,
+  .contact-field textarea::placeholder {
+    color: #64748b;
+  }
+
+  .contact-field input:focus,
+  .contact-field select:focus,
+  .contact-field textarea:focus {
+    border-color: #60a5fa;
+    box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.25);
+  }
+
+  .contact-error {
+    color: #f87171;
+  }
+
+  .contact-success svg {
+    color: #4ade80;
+  }
+
+  /* ---- Contact map placeholder ---- */
+  .contact-map-placeholder {
+    background: linear-gradient(135deg, #1e293b, #172554);
+  }
+
+  /* ---- Footer separation from page ---- */
+  .site-footer {
+    background-color: #070e1b;
+  }
+
+  /* ---- Stats bars stay deep navy ---- */
+  .stats-bar,
+  .about-stats,
+  .research-stats {
+    background-color: #0c2b64;
+  }
+}
