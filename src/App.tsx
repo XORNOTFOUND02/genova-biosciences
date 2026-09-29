@@ -1,10 +1,13 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route, Link, useLocation } from 'react-router-dom';
 import {
   Dna,
   ChevronDown,
   ArrowRight,
   Play,
+  Menu,
+  X,
+  ArrowUp,
 } from 'lucide-react';
 import Solutions from './Solutions';
 import About from './About';
@@ -21,6 +24,22 @@ import './index.css';
 function Navbar() {
   const location = useLocation();
   const isHome = location.pathname === '/';
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  // Close mobile menu on route change
+  useEffect(() => {
+    setMenuOpen(false);
+  }, [location.pathname]);
+
+  // Close mobile menu on Escape
+  useEffect(() => {
+    if (!menuOpen) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setMenuOpen(false);
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [menuOpen]);
 
   return (
     <nav className="navbar" aria-label="Main navigation">
@@ -36,7 +55,7 @@ function Navbar() {
       </Link>
 
       {/* Navigation Links */}
-      <ul className="nav-links">
+      <ul className={menuOpen ? 'nav-links nav-links-open' : 'nav-links'} id="nav-menu">
         <li>
           <Link to="/solutions" className="nav-link">
             Solutions
@@ -63,7 +82,25 @@ function Navbar() {
             Careers
           </Link>
         </li>
+        <li className="nav-mobile-only">
+          <Link to="/contact" className="nav-link nav-link-contact">
+            Contact Us
+            <ArrowRight size={16} strokeWidth={2} />
+          </Link>
+        </li>
       </ul>
+
+      {/* Mobile Menu Toggle */}
+      <button
+        type="button"
+        className="nav-toggle"
+        aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+        aria-expanded={menuOpen}
+        aria-controls="nav-menu"
+        onClick={() => setMenuOpen((v) => !v)}
+      >
+        {menuOpen ? <X size={24} strokeWidth={2} /> : <Menu size={24} strokeWidth={2} />}
+      </button>
 
       {/* CTA */}
       <Link to="/contact" className="nav-cta">
@@ -77,6 +114,57 @@ function Navbar() {
 /* ============================================
    Shared Footer
    ============================================ */
+function FooterNewsletter() {
+  const [email, setEmail] = useState('');
+  const [error, setError] = useState('');
+  const [subscribed, setSubscribed] = useState(false);
+
+  const subscribe = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email.trim()) {
+      setError('Please enter your email');
+      return;
+    }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      setError('Please enter a valid email address');
+      return;
+    }
+    setError('');
+    setSubscribed(true);
+  };
+
+  return (
+    <div className="footer-newsletter">
+      <h4>Stay informed</h4>
+      {subscribed ? (
+        <p className="footer-newsletter-success" role="status">
+          You&apos;re subscribed! Watch your inbox for our newsletter.
+        </p>
+      ) : (
+        <form className="footer-newsletter-form" onSubmit={subscribe} noValidate>
+          <input
+            type="email"
+            value={email}
+            onChange={(e) => {
+              setEmail(e.target.value);
+              if (error) setError('');
+            }}
+            placeholder="Your email address"
+            aria-label="Email address for newsletter"
+            aria-invalid={!!error}
+          />
+          <button type="submit">Subscribe</button>
+          {error && (
+            <span className="footer-newsletter-error" role="alert">
+              {error}
+            </span>
+          )}
+        </form>
+      )}
+    </div>
+  );
+}
+
 function Footer() {
   return (
     <footer className="site-footer">
@@ -94,6 +182,7 @@ function Footer() {
           <p className="footer-tagline">
             Advancing science. Transforming lives.
           </p>
+          <FooterNewsletter />
         </div>
 
         <div className="footer-links">
@@ -203,12 +292,46 @@ function Home() {
 }
 
 /* ============================================
+   Scroll Utilities
+   ============================================ */
+function ScrollToTop() {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+  return null;
+}
+
+function BackToTop() {
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setVisible(window.scrollY > 400);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
+  return (
+    <button
+      type="button"
+      className={visible ? 'back-to-top back-to-top-visible' : 'back-to-top'}
+      aria-label="Back to top"
+      onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+    >
+      <ArrowUp size={20} strokeWidth={2} />
+    </button>
+  );
+}
+
+/* ============================================
    App Root
    ============================================ */
 function App() {
   return (
     <BrowserRouter>
       <div className="app">
+        <ScrollToTop />
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
@@ -220,6 +343,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
         </Routes>
         <Footer />
+        <BackToTop />
       </div>
     </BrowserRouter>
   );

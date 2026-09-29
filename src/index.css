@@ -247,6 +247,37 @@ ol {
   transform: translateX(2px);
 }
 
+/* --- Mobile Menu Toggle (hidden on desktop) --- */
+.nav-toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  background: none;
+  border: 1px solid var(--color-divider);
+  border-radius: 12px;
+  color: var(--color-text-primary);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.nav-toggle:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+/* Contact item inside menu — mobile only */
+.nav-mobile-only {
+  display: none;
+}
+
+.nav-link-contact {
+  color: var(--color-primary) !important;
+  font-weight: 600;
+}
+
 /* ============================================
    Hero Section
    ============================================ */
@@ -453,6 +484,51 @@ ol {
     display: none;
   }
 
+  /* Hamburger visible on mobile only */
+  .nav-toggle {
+    display: inline-flex;
+    margin-left: auto;
+  }
+
+  .navbar .nav-cta {
+    display: none;
+  }
+
+  /* Mobile dropdown panel */
+  .nav-links.nav-links-open {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: var(--color-bg);
+    border-bottom: 1px solid var(--color-divider);
+    box-shadow: 0 16px 40px rgba(2, 6, 23, 0.25);
+    padding: 0.5rem 0;
+    z-index: 50;
+  }
+
+  .nav-links.nav-links-open li {
+    border-bottom: 1px solid var(--color-divider);
+  }
+
+  .nav-links.nav-links-open li:last-child {
+    border-bottom: none;
+  }
+
+  .nav-links.nav-links-open .nav-link {
+    padding: 0.9rem var(--spacing-nav-x);
+    font-size: 1rem;
+    justify-content: space-between;
+  }
+
+  .nav-links.nav-links-open .nav-mobile-only {
+    display: list-item;
+  }
+
   .navbar {
     padding: var(--spacing-nav-y) var(--spacing-nav-x);
   }
@@ -609,4 +685,112 @@ ol {
   .footer-col {
     min-width: 140px;
   }
+}
+
+/* ============================================
+   Footer Newsletter
+   ============================================ */
+.footer-newsletter {
+  margin-top: 1.5rem;
+  max-width: 340px;
+}
+
+.footer-newsletter h4 {
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 0.75rem;
+}
+
+.footer-newsletter-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.footer-newsletter-form input {
+  flex: 1 1 180px;
+  min-width: 0;
+  padding: 0.7rem 1rem;
+  font-size: 0.9rem;
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 9999px;
+  outline: none;
+  transition: border-color var(--transition-fast);
+}
+
+.footer-newsletter-form input::placeholder {
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.footer-newsletter-form input:focus {
+  border-color: var(--color-primary);
+}
+
+.footer-newsletter-form button {
+  padding: 0.7rem 1.4rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #ffffff;
+  background-color: var(--color-btn-primary);
+  border: none;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
+}
+
+.footer-newsletter-form button:hover {
+  background-color: var(--color-btn-primary-hover);
+}
+
+.footer-newsletter-error {
+  flex-basis: 100%;
+  font-size: 0.8rem;
+  color: #f87171;
+}
+
+.footer-newsletter-success {
+  font-size: 0.9rem;
+  color: #4ade80;
+  line-height: 1.5;
+}
+
+/* ============================================
+   Back to Top Button
+   ============================================ */
+.back-to-top {
+  position: fixed;
+  right: 1.5rem;
+  bottom: 1.5rem;
+  width: 46px;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-btn-primary);
+  color: #ffffff;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(2, 6, 23, 0.3);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(12px);
+  transition: all var(--transition-fast);
+  z-index: 60;
+}
+
+.back-to-top-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.back-to-top:hover {
+  background-color: var(--color-btn-primary-hover);
+  transform: translateY(-3px);
 }

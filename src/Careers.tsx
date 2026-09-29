@@ -154,7 +154,10 @@ export default function Careers() {
                   ))}
                 </div>
               </div>
-              <Link to="/contact" className="careers-role-apply">
+              <Link
+                to={`/contact?subject=Careers&role=${encodeURIComponent(role.title)}`}
+                className="careers-role-apply"
+              >
                 Apply
                 <ArrowRight size={16} strokeWidth={2} />
               </Link>
@@ -235,7 +238,7 @@ export default function Careers() {
             and tell us how you would like to contribute.
           </p>
           <div className="careers-cta-actions">
-            <Link to="/contact" className="btn-primary">
+            <Link to="/contact?subject=Careers" className="btn-primary">
               Send Your Resume
               <ArrowRight className="arrow-icon" size={18} strokeWidth={2} />
             </Link>

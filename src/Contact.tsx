@@ -1,4 +1,5 @@
-import { useState, type FormEvent } from 'react';
+import { useState, useEffect, type FormEvent } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { ArrowRight, Mail, MapPin, Phone, Clock, CheckCircle } from 'lucide-react';
 import './Contact.css';
 
@@ -11,12 +12,15 @@ interface FormData {
 
 type Errors = Partial<Record<keyof FormData, string>>;
 
-const offices = [
+const offices: { icon: typeof MapPin; label: string; value: string; href?: string }[] = [
   { icon: MapPin, label: 'Headquarters', value: '750 Cambridge Street, Boston, MA 02114' },
-  { icon: Phone, label: 'Phone', value: '+1 (617) 555-0140' },
-  { icon: Mail, label: 'Email', value: 'hello@doctorclinic.example.com' },
+  { icon: Phone, label: 'Phone', value: '+1 (617) 555-0140', href: 'tel:+16175550140' },
+  { icon: Mail, label: 'Email', value: 'hello@doctorclinic.example.com', href: 'mailto:hello@doctorclinic.example.com' },
   { icon: Clock, label: 'Hours', value: 'Mon – Fri, 9:00 AM – 6:00 PM EST' },
 ];
+
+const mapsUrl =
+  'https://www.google.com/maps/search/?api=1&query=750+Cambridge+Street+Boston+MA+02114';
 
 const subjects = ['General Inquiry', 'Partnerships', 'Press & Media', 'Careers', 'Technical Support'];
 
@@ -35,6 +39,22 @@ export default function Contact() {
   const [errors, setErrors] = useState<Errors>({});
   const [submitted, setSubmitted] = useState(false);
   const [sending, setSending] = useState(false);
+  const [searchParams] = useSearchParams();
+
+  // Prefill from URL: /contact?subject=Careers&role=Full-Stack%20Engineer
+  useEffect(() => {
+    const subject = searchParams.get('subject');
+    const role = searchParams.get('role');
+    setForm((prev) => {
+      const next = { ...prev };
+      if (subject && subjects.includes(subject)) next.subject = subject;
+      if (role) {
+        next.subject = 'Careers';
+        next.message = `I would like to apply for the ${role} position.`;
+      }
+      return next;
+    });
+  }, [searchParams]);
 
   const update = (field: keyof FormData, value: string) => {
     setForm((prev) => ({ ...prev, [field]: value }));
@@ -193,16 +213,28 @@ export default function Contact() {
                 </div>
                 <div>
                   <span className="contact-info-label">{item.label}</span>
-                  <span className="contact-info-value">{item.value}</span>
+                  {item.href ? (
+                    <a className="contact-info-value contact-info-link" href={item.href}>
+                      {item.value}
+                    </a>
+                  ) : (
+                    <span className="contact-info-value">{item.value}</span>
+                  )}
                 </div>
               </div>
             ))}
           </div>
 
-          <div className="contact-map-placeholder" aria-hidden="true">
+          <a
+            className="contact-map-placeholder"
+            href={mapsUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <MapPin size={32} strokeWidth={1.5} />
             <span>Boston, Massachusetts</span>
-          </div>
+            <span className="contact-map-cta">Get Directions →</span>
+          </a>
         </div>
       </section>
     </div>

@@ -265,3 +265,32 @@
   .contact-form-card { padding: 1.5rem; }
   .contact-body { padding: 1rem var(--spacing-hero-x) 3rem; }
 }
+
+/* ---- Clickable contact links ---- */
+.contact-info-link {
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.contact-info-link:hover {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+
+/* ---- Get Directions map link ---- */
+a.contact-map-placeholder {
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+a.contact-map-placeholder:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(26, 86, 219, 0.18);
+}
+
+.contact-map-placeholder .contact-map-cta {
+  color: var(--color-primary);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
