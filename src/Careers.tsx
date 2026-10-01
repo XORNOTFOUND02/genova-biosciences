@@ -1,12 +1,12 @@
 import { Link } from 'react-router-dom';
 import {
   ArrowRight,
-  MapPin,
+  User,
+  Star,
   Clock,
-  Briefcase,
   Heart,
   GraduationCap,
-  Plane,
+  Stethoscope,
   PiggyBank,
   Dumbbell,
 } from 'lucide-react';
@@ -14,93 +14,93 @@ import './Careers.css';
 
 const openRoles = [
   {
-    title: 'Senior Genomic Data Scientist',
-    department: 'Research & Development',
-    location: 'Boston, MA',
-    type: 'Full-time',
-    tags: ['Python', 'Deep Learning', 'Genomics'],
+    title: 'She caught what three other doctors missed.',
+    department: 'Maria G. · Patient since 2018',
+    location: 'Cardiac screening',
+    type: '★★★★★',
+    tags: ['Hypertension', 'Preventive care', 'Referral follow-up'],
   },
   {
-    title: 'Clinical Laboratory Scientist',
-    department: 'Diagnostics',
-    location: 'San Francisco, CA',
-    type: 'Full-time',
-    tags: ['CLIA', 'NGS', 'Molecular Biology'],
+    title: 'First doctor who explained my labs in plain English.',
+    department: 'James T. · Patient since 2021',
+    location: 'Diabetes care',
+    type: '★★★★★',
+    tags: ['Type 2 Diabetes', 'Nutrition', 'Telehealth'],
   },
   {
-    title: 'Full-Stack Engineer',
-    department: 'Platform Engineering',
-    location: 'Remote (US)',
-    type: 'Full-time',
-    tags: ['React', 'TypeScript', 'Node.js'],
+    title: 'My whole family sees him — kids included.',
+    department: 'The Rivera Family · Patients since 2016',
+    location: 'Family medicine',
+    type: '★★★★★',
+    tags: ['Pediatrics', 'Vaccines', 'Same-day visits'],
   },
   {
-    title: 'Regulatory Affairs Manager',
-    department: 'Quality & Compliance',
-    location: 'Washington, D.C.',
-    type: 'Full-time',
-    tags: ['FDA', 'ISO 13485', 'IVDR'],
+    title: 'Booked at 8am, seen at 8:10. Unreal.',
+    department: 'Dana K. · Patient since 2023',
+    location: 'Urgent care',
+    type: '★★★★★',
+    tags: ['Same-day', 'Short waits', 'Transparent pricing'],
   },
   {
-    title: 'Bioinformatics Intern',
-    department: 'Research & Development',
-    location: 'Boston, MA',
-    type: 'Internship',
-    tags: ['R', 'Pipeline Dev', 'Wet Lab'],
+    title: 'He called me himself with the biopsy results.',
+    department: 'Robert A. · Patient since 2015',
+    location: 'Cancer screening',
+    type: '★★★★★',
+    tags: ['Early detection', 'Direct communication', 'Trust'],
   },
   {
-    title: 'Field Application Scientist',
-    department: 'Commercial',
-    location: 'Chicago, IL',
-    type: 'Full-time',
-    tags: ['Customer Facing', 'Sequencing', 'Training'],
+    title: 'After 6 months my blood pressure finally settled.',
+    department: 'Priya S. · Patient since 2022',
+    location: 'Chronic care',
+    type: '★★★★★',
+    tags: ['Lifestyle plan', 'Home monitoring', 'Follow-ups'],
   },
 ];
 
 const benefits = [
   {
     icon: Heart,
-    title: 'Comprehensive Health',
+    title: 'Care That Actually Listens',
     description:
-      'Medical, dental, and vision coverage for you and your family — 100% premiums covered for employees.',
+      'Every appointment starts with your full story — a minimum of 30 minutes, never a seven-minute conveyor belt.',
   },
   {
     icon: GraduationCap,
-    title: 'Learning Budget',
+    title: 'Plain-Language Explanations',
     description:
-      '$5,000 annual stipend for conferences, courses, certifications, and continued education.',
+      'You leave knowing exactly what the diagnosis means, why this plan was chosen, and what happens if we wait.',
   },
   {
-    icon: Plane,
-    title: 'Generous PTO',
+    icon: Clock,
+    title: 'Answers Within One Day',
     description:
-      'Unlimited paid time off with a mandatory 3-week minimum, plus company-wide shutdown weeks.',
+      'Lab results, portal messages and prescription refills are handled within one business day — usually the same afternoon.',
   },
   {
     icon: PiggyBank,
-    title: 'Equity & Retirement',
+    title: 'Transparent Costs',
     description:
-      'Competitive equity packages and 401(k) matching at 6% from day one of employment.',
+      'Self-pay rates are posted upfront and insurance is billed for you — you will never open a surprise bill here.',
   },
   {
     icon: Dumbbell,
-    title: 'Wellness Program',
+    title: 'Prevention Before Pills',
     description:
-      'On-site fitness centers, mental health support, and a $200/month wellness allowance.',
+      'Screening, nutrition and movement plans come first; medication is the tool we reach for when lifestyle is not enough.',
   },
   {
-    icon: Briefcase,
-    title: 'Hybrid Flexibility',
+    icon: Stethoscope,
+    title: 'Coordinated Specialist Care',
     description:
-      'Choose your work arrangement — fully remote, hybrid, or on-site. We trust you to do your best work.',
+      'When you need a specialist, I refer to people I know personally and follow up with them so nothing falls through.',
   },
 ];
 
 const values = [
-  'Science first — every decision is grounded in evidence.',
-  'Diversity drives discovery — we recruit across disciplines and backgrounds.',
-  'Patients at the center — our work ultimately serves human health.',
-  'Intellectual honesty — we publish results even when they surprise us.',
+  'You are a person, not a chart number.',
+  'No question is too small — ask it twice if you need to.',
+  'We decide your treatment together, never for you.',
+  'If something is wrong, you will hear it from me directly.',
 ];
 
 export default function Careers() {
@@ -111,17 +111,17 @@ export default function Careers() {
         <div className="careers-hero-content">
           <div className="careers-chip">
             <span className="careers-chip-dot" aria-hidden="true" />
-            <span className="careers-chip-text">Careers at Genova</span>
+            <span className="careers-chip-text">Patient Stories</span>
           </div>
           <h1 className="careers-title">
-            Do the best work of your life
+            Real patients,
             <br />
-            <span className="highlight">in service of science.</span>
+            <span className="highlight">real outcomes.</span>
           </h1>
           <p className="careers-subtitle">
-            Join a team of scientists, engineers, and clinicians working to
-            make genomic medicine accessible to everyone. We are hiring across
-            research, engineering, and commercial teams.
+            Six stories from people who trusted this practice with their
+            health — in their own words, unedited, exactly as they sent them
+            to us.
           </p>
         </div>
       </section>
@@ -129,8 +129,8 @@ export default function Careers() {
       {/* ---- Open Roles ---- */}
       <section className="careers-roles">
         <div className="careers-section-header">
-          <span className="careers-section-label">Open Positions</span>
-          <h2 className="careers-section-title">Find your next role.</h2>
+          <span className="careers-section-label">Patient Stories</span>
+          <h2 className="careers-section-title">In their own words.</h2>
         </div>
         <div className="careers-roles-list">
           {openRoles.map((role) => (
@@ -140,11 +140,11 @@ export default function Careers() {
                 <h3 className="careers-role-title">{role.title}</h3>
                 <div className="careers-role-meta">
                   <span className="careers-role-meta-item">
-                    <MapPin size={14} strokeWidth={2} />
+                    <User size={14} strokeWidth={2} />
                     {role.location}
                   </span>
                   <span className="careers-role-meta-item">
-                    <Clock size={14} strokeWidth={2} />
+                    <Star size={14} strokeWidth={2} />
                     {role.type}
                   </span>
                 </div>
@@ -154,11 +154,8 @@ export default function Careers() {
                   ))}
                 </div>
               </div>
-              <Link
-                to={`/contact?subject=Careers&role=${encodeURIComponent(role.title)}`}
-                className="careers-role-apply"
-              >
-                Apply
+              <Link to="/contact" className="careers-role-apply">
+                Book a Visit
                 <ArrowRight size={16} strokeWidth={2} />
               </Link>
             </article>
@@ -169,9 +166,9 @@ export default function Careers() {
       {/* ---- Benefits ---- */}
       <section className="careers-benefits">
         <div className="careers-section-header">
-          <span className="careers-section-label">Benefits & Perks</span>
+          <span className="careers-section-label">Why Patients Stay</span>
           <h2 className="careers-section-title">
-            We invest in our people.
+            What keeps people coming back.
           </h2>
         </div>
         <div className="careers-benefits-grid">
@@ -191,19 +188,19 @@ export default function Careers() {
       <section className="careers-cta">
         <div className="careers-cta-content">
           <h2 className="careers-cta-title">
-            Do not see your role listed?
+            Ready to become the next patient story?
           </h2>
           <p className="careers-cta-desc">
-            We are always looking for exceptional talent. Send us your resume
-            and tell us how you would like to contribute.
+            New patients are welcome. Book a first consultation and see for
+            yourself what a 30-minute appointment feels like.
           </p>
           <div className="careers-cta-actions">
-            <Link to="/contact?subject=Careers" className="btn-primary">
-              Send Your Resume
+            <Link to="/contact" className="btn-primary">
+              Book an Appointment
               <ArrowRight className="arrow-icon" size={18} strokeWidth={2} />
             </Link>
             <Link to="/about" className="btn-secondary">
-              About Genova
+              About Dr. Mehta
             </Link>
           </div>
         </div>
@@ -213,14 +210,13 @@ export default function Careers() {
       <section className="careers-culture">
         <div className="careers-culture-content">
           <div className="careers-culture-text">
-            <span className="careers-section-label">Our Culture</span>
+            <span className="careers-section-label">My Promise</span>
             <h2 className="careers-section-title">
-              What it is like to work here.
+              How this practice treats you.
             </h2>
             <p className="careers-culture-desc">
-              We are a team of 350+ people across 12 countries who share a
-              belief that genomic medicine can transform healthcare — and that
-              building it requires the best minds from every discipline.
+              Four commitments I make to every person who walks through the
+              door — and the standards my own reviews are held to.
             </p>
             <ul className="careers-culture-values">
               {values.map((v) => (
@@ -230,20 +226,20 @@ export default function Careers() {
           </div>
           <div className="careers-culture-stats">
             <div className="careers-culture-stat">
-              <span className="careers-culture-stat-value">350+</span>
-              <span className="careers-culture-stat-label">Team Members</span>
+              <span className="careers-culture-stat-value">11,000+</span>
+              <span className="careers-culture-stat-label">Patients Treated</span>
             </div>
             <div className="careers-culture-stat">
-              <span className="careers-culture-stat-value">12</span>
-              <span className="careers-culture-stat-label">Countries</span>
+              <span className="careers-culture-stat-value">96%</span>
+              <span className="careers-culture-stat-label">Would Recommend</span>
             </div>
             <div className="careers-culture-stat">
-              <span className="careers-culture-stat-value">4.8</span>
-              <span className="careers-culture-stat-label">Glassdoor Rating</span>
+              <span className="careers-culture-stat-value">18</span>
+              <span className="careers-culture-stat-label">Years In Practice</span>
             </div>
             <div className="careers-culture-stat">
-              <span className="careers-culture-stat-value">94%</span>
-              <span className="careers-culture-stat-label">Retention Rate</span>
+              <span className="careers-culture-stat-value">&lt;10m</span>
+              <span className="careers-culture-stat-label">Average Wait</span>
             </div>
           </div>
         </div>

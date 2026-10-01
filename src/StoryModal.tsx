@@ -80,10 +80,10 @@ export default function StoryModal({ isOpen, onClose }: StoryModalProps) {
           </video>
         </div>
         <div className="story-modal-caption">
-          <h3>Our Story</h3>
+          <h3>Meet Dr. Mehta</h3>
           <p>
-            From a small research team to a global biotechnology company — see
-            how Doctor Clinic is advancing science and transforming lives.
+            Eighteen years of family medicine in one practice — see how Doctor
+            Clinic puts listening before prescribing.
           </p>
         </div>
       </div>

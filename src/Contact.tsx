@@ -12,17 +12,17 @@ interface FormData {
 
 type Errors = Partial<Record<keyof FormData, string>>;
 
-const offices: { icon: typeof MapPin; label: string; value: string; href?: string }[] = [
-  { icon: MapPin, label: 'Headquarters', value: '750 Cambridge Street, Boston, MA 02114' },
-  { icon: Phone, label: 'Phone', value: '+1 (617) 555-0140', href: 'tel:+16175550140' },
-  { icon: Mail, label: 'Email', value: 'hello@doctorclinic.example.com', href: 'mailto:hello@doctorclinic.example.com' },
-  { icon: Clock, label: 'Hours', value: 'Mon – Fri, 9:00 AM – 6:00 PM EST' },
-];
+  const offices: { icon: typeof MapPin; label: string; value: string; href?: string }[] = [
+    { icon: MapPin, label: 'Clinic', value: '750 Cambridge Street, Boston, MA 02114' },
+    { icon: Phone, label: 'Phone', value: '+1 (617) 555-0140', href: 'tel:+16175550140' },
+    { icon: Mail, label: 'Email', value: 'hello@doctorclinic.example.com', href: 'mailto:hello@doctorclinic.example.com' },
+    { icon: Clock, label: 'Hours', value: 'Mon – Fri, 8:00 AM – 5:00 PM EST' },
+  ];
 
 const mapsUrl =
   'https://www.google.com/maps/search/?api=1&query=750+Cambridge+Street+Boston+MA+02114';
 
-const subjects = ['General Inquiry', 'Partnerships', 'Press & Media', 'Careers', 'Technical Support'];
+const subjects = ['New Appointment', 'Follow-Up Visit', 'Prescription Refill', 'Billing & Insurance', 'Other'];
 
 function validate(data: FormData): Errors {
   const errors: Errors = {};
@@ -35,13 +35,13 @@ function validate(data: FormData): Errors {
 }
 
 export default function Contact() {
-  const [form, setForm] = useState<FormData>({ name: '', email: '', subject: 'General Inquiry', message: '' });
+  const [form, setForm] = useState<FormData>({ name: '', email: '', subject: 'New Appointment', message: '' });
   const [errors, setErrors] = useState<Errors>({});
   const [submitted, setSubmitted] = useState(false);
   const [sending, setSending] = useState(false);
   const [searchParams] = useSearchParams();
 
-  // Prefill from URL: /contact?subject=Careers&role=Full-Stack%20Engineer
+  // Prefill from URL: /contact?subject=New%20Appointment&role=...
   useEffect(() => {
     const subject = searchParams.get('subject');
     const role = searchParams.get('role');
@@ -49,8 +49,8 @@ export default function Contact() {
       const next = { ...prev };
       if (subject && subjects.includes(subject)) next.subject = subject;
       if (role) {
-        next.subject = 'Careers';
-        next.message = `I would like to apply for the ${role} position.`;
+        next.subject = 'Other';
+        next.message = `I would like to ask about: ${role}.`;
       }
       return next;
     });
@@ -77,7 +77,7 @@ export default function Contact() {
   };
 
   const reset = () => {
-    setForm({ name: '', email: '', subject: 'General Inquiry', message: '' });
+    setForm({ name: '', email: '', subject: 'New Appointment', message: '' });
     setErrors({});
     setSubmitted(false);
   };
@@ -89,17 +89,17 @@ export default function Contact() {
         <div className="contact-hero-content">
           <div className="contact-chip">
             <span className="contact-chip-dot" aria-hidden="true" />
-            <span className="contact-chip-text">Contact Us</span>
+            <span className="contact-chip-text">Book Appointment</span>
           </div>
           <h1 className="contact-title">
-            Let us start the
+            Let us get you
             <br />
-            <span className="highlight">conversation.</span>
+            <span className="highlight">feeling better.</span>
           </h1>
           <p className="contact-subtitle">
-            Whether you have a question about our solutions, want to explore a
-            partnership, or are interested in joining our team — we would love
-            to hear from you.
+            Request a first consultation, a follow-up, or a prescription
+            refill — describe what you need and the clinic will confirm a
+            time within one business day.
           </p>
         </div>
       </section>
@@ -110,20 +110,20 @@ export default function Contact() {
           {submitted ? (
             <div className="contact-success" role="status">
               <CheckCircle size={48} strokeWidth={1.5} />
-              <h2>Message sent!</h2>
+              <h2>Request received!</h2>
               <p>
-                Thank you, {form.name || 'friend'}. We have received your
-                message and will get back to you at{' '}
+                Thank you, {form.name || 'friend'}. The clinic has your
+                request and will confirm your appointment at{' '}
                 <strong>{form.email}</strong> within one business day.
               </p>
               <button type="button" className="btn-primary" onClick={reset}>
-                Send Another Message
+                Send Another Request
                 <ArrowRight className="arrow-icon" size={18} strokeWidth={2} />
               </button>
             </div>
           ) : (
             <form onSubmit={handleSubmit} noValidate>
-              <h2 className="contact-form-title">Send us a message</h2>
+              <h2 className="contact-form-title">Request an appointment</h2>
 
               <div className="contact-field">
                 <label htmlFor="contact-name">Full Name</label>
@@ -183,7 +183,7 @@ export default function Contact() {
                   rows={5}
                   value={form.message}
                   onChange={(e) => update('message', e.target.value)}
-                  placeholder="Tell us how we can help..."
+                  placeholder="Describe your symptoms, preferred days or times..."
                   aria-invalid={!!errors.message}
                   aria-describedby={errors.message ? 'contact-message-error' : undefined}
                 />
@@ -195,7 +195,7 @@ export default function Contact() {
               </div>
 
               <button type="submit" className="btn-primary contact-submit" disabled={sending}>
-                {sending ? 'Sending...' : 'Send Message'}
+                {sending ? 'Sending...' : 'Send Request'}
                 {!sending && <ArrowRight className="arrow-icon" size={18} strokeWidth={2} />}
               </button>
             </form>
@@ -204,7 +204,7 @@ export default function Contact() {
 
         {/* ---- Info ---- */}
         <div className="contact-info">
-          <h2 className="contact-info-title">Other ways to reach us</h2>
+          <h2 className="contact-info-title">Clinic details</h2>
           <div className="contact-info-list">
             {offices.map((item) => (
               <div className="contact-info-item" key={item.label}>

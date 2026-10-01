@@ -44,7 +44,7 @@ function Navbar() {
   return (
     <nav className="navbar" aria-label="Main navigation">
       {/* Logo */}
-      <Link to="/" className="logo" aria-label="Genova Biosciences Home">
+      <Link to="/" className="logo" aria-label="Doctor Clinic Home">
         <span className="logo-icon">
           <Dna size={24} strokeWidth={2} />
         </span>
@@ -58,33 +58,33 @@ function Navbar() {
       <ul className={menuOpen ? 'nav-links nav-links-open' : 'nav-links'} id="nav-menu">
         <li>
           <Link to="/solutions" className="nav-link">
-            Solutions
+            Services
             {!isHome && <ChevronDown className="chevron-icon" size={16} strokeWidth={2} />}
           </Link>
         </li>
         <li>
           <Link to="/technology" className="nav-link">
-            Technology
+            Clinic
           </Link>
         </li>
         <li>
           <Link to="/research" className="nav-link">
-            Research
+            Publications
           </Link>
         </li>
         <li>
           <Link to="/about" className="nav-link">
-            About Us
+            About
           </Link>
         </li>
         <li>
           <Link to="/careers" className="nav-link">
-            Careers
+            Stories
           </Link>
         </li>
         <li className="nav-mobile-only">
           <Link to="/contact" className="nav-link nav-link-contact">
-            Contact Us
+            Book Visit
             <ArrowRight size={16} strokeWidth={2} />
           </Link>
         </li>
@@ -104,7 +104,7 @@ function Navbar() {
 
       {/* CTA */}
       <Link to="/contact" className="nav-cta">
-        Contact Us
+        Book Appointment
         <ArrowRight className="arrow-icon" size={18} strokeWidth={2} />
       </Link>
     </nav>
@@ -170,47 +170,47 @@ function Footer() {
     <footer className="site-footer">
       <div className="footer-container">
         <div className="footer-brand">
-          <Link to="/" className="logo" aria-label="Genova Biosciences Home">
+          <Link to="/" className="logo" aria-label="Doctor Clinic Home">
             <span className="logo-icon">
               <Dna size={24} strokeWidth={2} />
             </span>
             <span className="logo-text">
-              <span className="logo-name">Genova</span>
-              <span className="logo-subtitle">Biosciences</span>
+              <span className="logo-name">Doctor</span>
+              <span className="logo-subtitle">Clinic</span>
             </span>
           </Link>
           <p className="footer-tagline">
-            Advancing science. Transforming lives.
+            Personal care. Evidence-based medicine.
           </p>
           <FooterNewsletter />
         </div>
 
         <div className="footer-links">
           <div className="footer-col">
-            <h4>Solutions</h4>
-            <Link to="/solutions">Genomic Sequencing</Link>
-            <Link to="/solutions">Drug Discovery</Link>
-            <Link to="/solutions">Gene Therapy</Link>
-            <Link to="/solutions">Diagnostics</Link>
+            <h4>Services</h4>
+            <Link to="/solutions">General Consultation</Link>
+            <Link to="/solutions">Chronic Care</Link>
+            <Link to="/solutions">Family Medicine</Link>
+            <Link to="/solutions">Telehealth</Link>
           </div>
           <div className="footer-col">
-            <h4>Company</h4>
-            <Link to="/about">About Us</Link>
-            <Link to="/careers">Careers</Link>
-            <Link to="/research">Research</Link>
-            <Link to="/research">News</Link>
+            <h4>Practice</h4>
+            <Link to="/about">About Dr. Mehta</Link>
+            <Link to="/technology">Clinic & Facilities</Link>
+            <Link to="/research">Publications</Link>
+            <Link to="/careers">Patient Stories</Link>
           </div>
           <div className="footer-col">
-            <h4>Connect</h4>
+            <h4>Patients</h4>
+            <Link to="/contact">Book Appointment</Link>
+            <Link to="/contact">Clinic Hours</Link>
             <Link to="/contact">Contact</Link>
-            <Link to="/contact">Support</Link>
-            <Link to="/contact">Partnerships</Link>
           </div>
         </div>
       </div>
 
       <div className="footer-bottom">
-        <p>&copy; {new Date().getFullYear()} Genova Biosciences. All rights reserved.</p>
+        <p>&copy; {new Date().getFullYear()} Doctor Clinic. All rights reserved.</p>
       </div>
     </footer>
   );
@@ -249,26 +249,26 @@ function Home() {
           {/* Chip / Badge */}
           <div className="hero-chip">
             <span className="hero-chip-dot" aria-hidden="true" />
-            <span className="hero-chip-text">Innovating Life Sciences</span>
+            <span className="hero-chip-text">Family Medicine · Boston</span>
           </div>
 
           {/* Headline */}
           <h1 className="hero-title">
-            Advancing science.
+            Care that listens.
             <br />
-            <span className="highlight">Transforming</span> lives.
+            <span className="highlight">Medicine</span> that works.
           </h1>
 
           {/* Description */}
           <p className="hero-description">
-            Genova Biosciences is at the forefront of biotechnology, developing
-            innovative solutions for a healthier tomorrow.
+            Dr. Aarav Mehta runs a solo family-medicine practice built on
+            thirty-minute appointments, honest answers and prevention first.
           </p>
 
           {/* Action Buttons */}
           <div className="hero-actions">
-            <Link to="/solutions" className="btn-primary">
-              Explore Our Solutions
+            <Link to="/contact" className="btn-primary">
+              Book an Appointment
               <ArrowRight className="arrow-icon" size={18} strokeWidth={2} />
             </Link>
 
@@ -280,7 +280,7 @@ function Home() {
               <span className="play-icon-wrapper" aria-hidden="true">
                 <Play className="play-icon" size={12} strokeWidth={2.5} />
               </span>
-              Watch Our Story
+              Meet Dr. Mehta
             </button>
           </div>
         </div>

@@ -1,13 +1,12 @@
 import { Link } from 'react-router-dom';
 import {
   ArrowRight,
-  Microscope,
-  FlaskConical,
-  Dna,
+  Stethoscope,
   HeartPulse,
-  ShieldCheck,
-  Zap,
   Users,
+  Microscope,
+  Zap,
+  Monitor,
   TrendingUp,
   Award,
 } from 'lucide-react';
@@ -15,54 +14,54 @@ import './Solutions.css';
 
 const solutions = [
   {
-    icon: Microscope,
-    title: 'Genomic Sequencing',
+    icon: Stethoscope,
+    title: 'General Consultation',
     description:
-      'High-throughput sequencing platforms delivering precise, full-genome analysis for research and clinical diagnostics.',
-    features: ['Whole Genome Sequencing', 'Targeted Panels', 'Single-Cell Analysis'],
-  },
-  {
-    icon: FlaskConical,
-    title: 'Drug Discovery',
-    description:
-      'AI-powered compound screening and lead optimization pipelines that accelerate therapeutic development from concept to clinic.',
-    features: ['Virtual Screening', 'ADMET Prediction', 'Lead Optimization'],
-  },
-  {
-    icon: Dna,
-    title: 'Gene Therapy',
-    description:
-      'Next-generation viral and non-viral vector systems for safe, efficient, and targeted gene delivery.',
-    features: ['AAV Vectors', 'LNP Delivery', 'CRISPR Integration'],
+      'Unhurried appointments where we discuss your history, symptoms and goals — and build a clear plan together.',
+    features: ['Same-day sick visits', 'Annual physicals', 'Prescription reviews'],
   },
   {
     icon: HeartPulse,
-    title: 'Diagnostics',
+    title: 'Chronic Condition Care',
     description:
-      'Rapid, accurate point-of-care and laboratory diagnostic solutions for infectious diseases, oncology, and rare conditions.',
-    features: ['PCR Platforms', 'Immunoassays', 'Biomarker Detection'],
+      'Ongoing management for diabetes, hypertension and heart disease with regular check-ins and treatment adjustments.',
+    features: ['Personal care plans', 'Home monitoring setup', 'Specialist coordination'],
   },
   {
-    icon: ShieldCheck,
-    title: 'Biosafety & Compliance',
+    icon: Users,
+    title: 'Family Medicine',
     description:
-      'Comprehensive regulatory consulting and biosafety assessments ensuring your projects meet global standards.',
-    features: ['GLP/GMP Compliance', 'Risk Assessment', 'Regulatory Filing'],
+      'One trusted doctor for the whole family — children, adults and seniors, from newborn visits to geriatric care.',
+    features: ['Kids & adults', 'Women’s health', 'Senior wellness'],
+  },
+  {
+    icon: Microscope,
+    title: 'Diagnostics & Lab Work',
+    description:
+      'On-site blood panels, ECG and rapid testing with most results explained back to you within 24 hours.',
+    features: ['On-site lab', 'Rapid strep & flu', 'Results in 24 hrs'],
   },
   {
     icon: Zap,
-    title: 'Bioprocessing',
+    title: 'Same-Day Urgent Care',
     description:
-      'Scalable biomanufacturing solutions from upstream cell culture to downstream purification and quality control.',
-    features: ['Cell Line Development', 'Downstream Processing', 'QC Analytics'],
+      'Walk-in assessment for acute illness, minor injuries and infections — no waiting room marathon required.',
+    features: ['Acute illness', 'Minor injuries', 'Wound care'],
+  },
+  {
+    icon: Monitor,
+    title: 'Telehealth Visits',
+    description:
+      'Secure video consultations for follow-ups, prescription renewals and quick concerns when you cannot come in.',
+    features: ['Video consults', 'Rx renewals', 'Chart follow-ups'],
   },
 ];
 
 const stats = [
-  { icon: Users, value: '500+', label: 'Research Partners' },
-  { icon: TrendingUp, value: '98.7%', label: 'Sequencing Accuracy' },
-  { icon: Award, value: '120+', label: 'Patents Filed' },
-  { icon: FlaskConical, value: '35+', label: 'Pipeline Candidates' },
+  { icon: Users, value: '14,200+', label: 'Patients Treated' },
+  { icon: TrendingUp, value: '97.4%', label: 'Satisfaction Rate' },
+  { icon: Award, value: '18 yrs', label: 'In Clinical Practice' },
+  { icon: Microscope, value: '24 hrs', label: 'Typical Lab Results' },
 ];
 
 export default function Solutions() {
@@ -73,17 +72,16 @@ export default function Solutions() {
         <div className="solutions-hero-content">
           <div className="solutions-chip">
             <span className="solutions-chip-dot" aria-hidden="true" />
-            <span className="solutions-chip-text">Our Solutions</span>
+            <span className="solutions-chip-text">Services</span>
           </div>
           <h1 className="solutions-title">
-            Precision biotechnology for
+            Care built around
             <br />
-            <span className="highlight">every stage</span> of discovery.
+            <span className="highlight">your everyday</span> health.
           </h1>
           <p className="solutions-subtitle">
-            From genomic sequencing to therapeutic manufacturing, Genova
-            Biosciences provides end-to-end solutions that empower researchers,
-            clinicians, and partners worldwide.
+            From same-day sick visits to long-term condition management, every
+            service is designed around one thing: listening to you first.
           </p>
         </div>
       </section>
@@ -101,7 +99,7 @@ export default function Solutions() {
         </div>
       </section>
 
-      {/* ---- Solutions Grid ---- */}
+      {/* ---- Services Grid ---- */}
       <section className="solutions-grid-section">
         <div className="solutions-grid">
           {solutions.map((solution) => (
@@ -117,7 +115,7 @@ export default function Solutions() {
                 ))}
               </ul>
               <Link to="/contact" className="solution-card-link">
-                Learn More
+                Book this service
                 <ArrowRight size={16} strokeWidth={2} />
               </Link>
             </article>
@@ -129,19 +127,19 @@ export default function Solutions() {
       <section className="solutions-cta">
         <div className="solutions-cta-content">
           <h2 className="solutions-cta-title">
-            Ready to accelerate your research?
+            Ready to book your visit?
           </h2>
           <p className="solutions-cta-desc">
-            Our team of scientists and engineers is ready to discuss how Genova
-            can support your next breakthrough.
+            Whether it is a routine check-up or a second opinion, my team and I
+            are here to help — usually within 48 hours.
           </p>
           <div className="solutions-cta-actions">
             <Link to="/contact" className="btn-primary">
-              Get in Touch
+              Book an Appointment
               <ArrowRight className="arrow-icon" size={18} strokeWidth={2} />
             </Link>
             <Link to="/about" className="btn-secondary">
-              About Genova
+              About Dr. Mehta
             </Link>
           </div>
         </div>

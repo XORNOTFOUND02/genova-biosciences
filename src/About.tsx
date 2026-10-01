@@ -15,84 +15,84 @@ import './About.css';
 const values = [
   {
     icon: Target,
-    title: 'Precision',
+    title: 'Thoroughness',
     description:
-      'Every experiment, every sequence, every result is executed with uncompromising accuracy and attention to detail.',
+      'No symptom dismissed and no chart closed until every loose end is checked — even the ones that turn out to be nothing.',
   },
   {
     icon: Lightbulb,
-    title: 'Innovation',
+    title: 'Curiosity',
     description:
-      'We push the boundaries of what is possible in biotechnology, investing heavily in R&D to stay ahead of the curve.',
+      'Medicine rewards the doctor who keeps asking why. New research is read every week and brought into the room when it matters.',
   },
   {
     icon: HeartHandshake,
-    title: 'Integrity',
+    title: 'Empathy',
     description:
-      'Transparent practices, ethical research, and honest communication form the foundation of everything we do.',
+      'You will be treated as a whole person — family, work and worries included — not as a set of lab values to normalize.',
   },
   {
     icon: Globe,
-    title: 'Impact',
+    title: 'Community',
     description:
-      'Our work reaches laboratories and clinics worldwide, improving lives across borders and communities.',
+      'Free annual screening days, school health talks and pro-bono consults keep this practice rooted in the neighborhood it serves.',
   },
 ];
 
 const milestones = [
   {
-    year: '2012',
-    title: 'Founded',
+    year: '2007',
+    title: 'Medical Degree',
     description:
-      'Genova Biosciences was founded with a vision to democratize access to advanced genomic tools.',
+      'Graduated medical school with honors, with early clinical rotations in cardiology and family medicine.',
   },
   {
-    year: '2016',
-    title: 'First Platform Launch',
+    year: '2011',
+    title: 'Family Medicine Residency',
     description:
-      'Launched our proprietary genomic sequencing platform, reducing turnaround time by 60%.',
+      'Completed residency managing chronic disease panels, deliveries and emergency shifts across three hospitals.',
   },
   {
-    year: '2020',
-    title: 'Global Expansion',
+    year: '2014',
+    title: 'Doctor Clinic Opens',
     description:
-      'Expanded operations to 12 countries with partnerships across leading research institutions.',
+      'Opened a solo practice built on one promise: every patient gets thirty unhurried minutes and a doctor who follows up.',
   },
   {
-    year: '2024',
-    title: 'AI Integration',
+    year: '2021',
+    title: 'First Peer-Reviewed Study',
     description:
-      'Integrated machine learning pipelines into drug discovery, cutting lead identification time in half.',
+      'Published research on plain-language lab communication — now standard practice at every new-patient visit.',
   },
 ];
 
 const stats = [
-  { icon: Users, value: '350+', label: 'Team Members' },
-  { icon: Globe, value: '12', label: 'Countries' },
-  { icon: Award, value: '120+', label: 'Patents' },
-  { icon: Microscope, value: '500+', label: 'Research Partners' },
+  { icon: Users, value: '11,000+', label: 'Patients Treated' },
+  { icon: Award, value: '4.9', label: 'Patient Rating' },
+  { icon: FlaskConical, value: '24', label: 'Publications' },
+  { icon: Globe, value: '18', label: 'Years Practicing' },
 ];
 
 const team = [
   {
-    name: 'Dr. Elena Voss',
-    role: 'Chief Executive Officer',
-    bio: 'Former director at NIH with 20+ years in genomic research and biotech leadership.',
+    name: 'Aarav Mehta',
+    role: 'Founder & Family Physician',
+    bio: 'Board-certified in family medicine with 18 years of clinic experience and a weekly research habit.',
   },
   {
-    name: 'Dr. Marcus Chen',
-    role: 'Chief Scientific Officer',
-    bio: 'Pioneer in CRISPR-based therapies with over 80 published papers in nature and science.',
+    name: 'Sarah Okafor',
+    role: 'Lead Nurse',
+    bio: 'Fourteen years in primary care — runs vaccinations, chronic-care check-ins and every calm reassurance.',
   },
   {
-    name: 'Dr. Priya Nair',
-    role: 'VP of Research',
-    bio: 'Leads our drug discovery division, previously headed oncology programs at Genentech.',
+    name: 'Lucia Rivera',
+    role: 'Practice Manager',
+    bio: 'Keeps scheduling, billing and insurance running smoothly so patients never face a surprise bill.',
   },
   {
-    name: 'James Whitfield',
-    role: 'Chief Technology Officer',
-    bio: 'Architect of our AI-driven bioinformatics platform, ex-Google DeepMind.',
+    name: 'Grace Chen',
+    role: 'Medical Assistant',
+    bio: 'Vitals, lab draws, and the person who somehow remembers every patient’s dog’s name.',
   },
 ];
 
@@ -104,17 +104,17 @@ export default function About() {
         <div className="about-hero-content">
           <div className="about-chip">
             <span className="about-chip-dot" aria-hidden="true" />
-            <span className="about-chip-text">About Genova</span>
+            <span className="about-chip-text">About Dr. Mehta</span>
           </div>
           <h1 className="about-title">
-            We are scientists, engineers, and
+            Doctor, teacher, lifelong
             <br />
-            <span className="highlight">dreamers</span> building the future of biology.
+            <span className="highlight">student</span> of medicine.
           </h1>
           <p className="about-subtitle">
-            Founded in 2012, Genova Biosciences has grown from a small research
-            team into a global biotechnology company dedicated to advancing
-            human health through innovation.
+            Dr. Aarav Mehta runs a solo family-medicine practice that blends
+            clinic time, teaching and preventive-care research — one patient,
+            one honest conversation at a time.
           </p>
         </div>
       </section>
@@ -136,36 +136,36 @@ export default function About() {
       <section className="about-mission">
         <div className="about-mission-content">
           <div className="about-mission-text">
-            <span className="about-section-label">Our Mission</span>
+            <span className="about-section-label">My Mission</span>
             <h2 className="about-section-title">
-              Making advanced biotechnology
+              Advanced care with a
               <br />
-              <span className="highlight">accessible to all.</span>
+              <span className="highlight">human</span> face.
             </h2>
             <p className="about-section-desc">
-              We believe that breakthrough science should not be confined to a
-              handful of elite institutions. Genova Biosciences builds tools and
-              platforms that put cutting-edge genomic capabilities within reach
-              of researchers, clinicians, and patients around the world.
+              I believe good medicine should not require a hospital maze, a
+              six-week wait, or a doctor who never looks up from the screen.
+              This practice exists to give neighbors unhurried, evidence-based
+              care — the kind you would want for your own family.
             </p>
             <p className="about-section-desc">
-              From high-throughput sequencing to AI-driven drug discovery, every
-              solution we create is designed with one goal: accelerating the
-              path from discovery to impact.
+              From same-day labs to telehealth follow-ups, every part of the
+              clinic is designed around one goal: catching problems early and
+              explaining them clearly.
             </p>
           </div>
           <div className="about-mission-visual">
             <div className="about-mission-card">
               <FlaskConical size={32} strokeWidth={1.5} />
-              <span>Research Lab</span>
+              <span>Same-Day Labs</span>
             </div>
             <div className="about-mission-card about-mission-card-offset">
               <Microscope size={32} strokeWidth={1.5} />
-              <span>Genomics Core</span>
+              <span>Evidence-Based Care</span>
             </div>
             <div className="about-mission-card">
               <Globe size={32} strokeWidth={1.5} />
-              <span>Global Network</span>
+              <span>Telehealth Anywhere</span>
             </div>
           </div>
         </div>
@@ -174,8 +174,8 @@ export default function About() {
       {/* ---- Values Section ---- */}
       <section className="about-values">
         <div className="about-values-header">
-          <span className="about-section-label">Our Values</span>
-          <h2 className="about-section-title">What drives us every day.</h2>
+          <span className="about-section-label">What I Stand For</span>
+          <h2 className="about-section-title">What drives every appointment.</h2>
         </div>
         <div className="about-values-grid">
           {values.map((value) => (
@@ -193,8 +193,8 @@ export default function About() {
       {/* ---- Timeline Section ---- */}
       <section className="about-timeline-section">
         <div className="about-timeline-header">
-          <span className="about-section-label">Our Journey</span>
-          <h2 className="about-section-title">Milestones that shaped us.</h2>
+          <span className="about-section-label">My Journey</span>
+          <h2 className="about-section-title">Milestones that shaped this practice.</h2>
         </div>
         <div className="about-timeline">
           {milestones.map((milestone) => (
@@ -212,8 +212,8 @@ export default function About() {
       {/* ---- Team Section ---- */}
       <section className="about-team">
         <div className="about-team-header">
-          <span className="about-section-label">Leadership</span>
-          <h2 className="about-section-title">The people behind the science.</h2>
+          <span className="about-section-label">The Team</span>
+          <h2 className="about-section-title">The people you will meet.</h2>
         </div>
         <div className="about-team-grid">
           {team.map((member) => (
@@ -236,19 +236,19 @@ export default function About() {
       <section className="about-cta">
         <div className="about-cta-content">
           <h2 className="about-cta-title">
-            Want to be part of our story?
+            Come say hello in person.
           </h2>
           <p className="about-cta-desc">
-            Whether you are a researcher, partner, or future team member, we
-            would love to hear from you.
+            Whether you are a prospective patient, a colleague, or a student
+            hoping to shadow — the door is open.
           </p>
           <div className="about-cta-actions">
             <Link to="/contact" className="btn-primary">
-              Get in Touch
+              Book an Appointment
               <ArrowRight className="arrow-icon" size={18} strokeWidth={2} />
             </Link>
             <Link to="/careers" className="btn-secondary">
-              View Careers
+              Patient Stories
             </Link>
           </div>
         </div>

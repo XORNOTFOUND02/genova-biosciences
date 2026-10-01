@@ -13,63 +13,63 @@ import './Research.css';
 
 const focusAreas = [
   {
-    icon: Dna,
-    title: 'Genomic Medicine',
-    description:
-      'Mapping the genetic basis of disease to enable personalized treatment plans tailored to each patient\u2019s unique genomic profile.',
-    tags: ['Pharmacogenomics', 'Rare Diseases', 'Oncogenomics'],
-  },
-  {
     icon: HeartPulse,
-    title: 'Cardiovascular Genomics',
+    title: 'Preventive Cardiology',
     description:
-      'Identifying hereditary cardiac risk factors and developing early-intervention strategies for inherited heart conditions.',
-    tags: ['Risk Prediction', 'LVH Markers', 'Arrhythmia Genes'],
+      'Catching heart risk early — blood pressure, cholesterol and lifestyle changes that keep patients out of the cardiac ward.',
+    tags: ['Hypertension', 'Cholesterol', 'Lifestyle medicine'],
   },
   {
     icon: Microscope,
-    title: 'Immunotherapy Research',
+    title: 'Diabetes Management',
     description:
-      'Engineering next-generation CAR-T and antibody therapies guided by single-cell transcriptomic profiling.',
-    tags: ['CAR-T', 'Single-Cell', 'Tumor Microenvironment'],
+      'Practical Type 2 diabetes care with continuous glucose insights, nutrition plans and medication adjustments that fit real life.',
+    tags: ['Type 2 Diabetes', 'CGM insights', 'Nutrition'],
+  },
+  {
+    icon: Dna,
+    title: 'Family Health Screening',
+    description:
+      'Risk-based screening for cancer and hereditary conditions — the right tests at the right age, explained in plain language.',
+    tags: ['Cancer screening', 'Early detection', 'Risk assessment'],
   },
   {
     icon: Beaker,
-    title: 'Synthetic Biology',
+    title: 'Healthy Aging',
     description:
-      'Designing biological circuits and engineered organisms for therapeutic production and environmental applications.',
-    tags: ['Gene Circuits', 'Biosensors', 'Metabolic Engineering'],
+      'Hormone balance, bone health and mobility programs that help patients stay independent well into their seventies and beyond.',
+    tags: ['Hormone health', 'Bone density', 'Mobility'],
   },
 ];
 
 const publications = [
   {
-    journal: 'Nature Genetics',
+    journal: 'Journal of Family Practice',
     year: '2025',
-    title: 'Population-scale variant calling improves pathogenicity prediction across diverse ancestries',
-    authors: 'Voss E., Chen M., Nair P. et al.',
-    doi: '10.1038/ng.2025.0412',
+    title: 'Door-to-doctor time under ten minutes: redesigning solo-practice scheduling',
+    authors: 'Mehta A., Rivera S.',
+    doi: '10.1093/jfp/2025.0187',
   },
   {
-    journal: 'Cell',
+    journal: 'American Journal of Preventive Medicine',
     year: '2024',
-    title: 'Federated deep learning enables multi-institutional genomic analysis without data sharing',
-    authors: 'Whitfield J., Chen M., et al.',
-    doi: '10.1016/cell.2024.08.019',
+    title: 'Home blood-pressure logging improves hypertension control in primary care: a 12-month cohort',
+    authors: 'Mehta A., Okafor C., Chen L. et al.',
+    doi: '10.1016/j.amepre.2024.06.014',
   },
   {
-    journal: 'The Lancet',
+    journal: 'BMJ Primary Care',
     year: '2024',
-    title: 'Clinical utility of AI-driven pharmacogenomic dosing in a prospective multicenter trial',
-    authors: 'Nair P., Voss E., et al.',
-    doi: '10.1016/S0140-6736(24)01234-5',
+    title: 'Telehealth follow-ups without visit fatigue: patient outcomes in a direct-care model',
+    authors: 'Mehta A., Rivera S.',
+    doi: '10.1136/bmjpc-2024-00112',
   },
   {
-    journal: 'Science Translational Medicine',
+    journal: 'Annals of Family Medicine',
     year: '2023',
-    title: 'Single-cell atlas of treatment-resistant tumors reveals targetable resistance mechanisms',
-    authors: 'Chen M., Nair P., et al.',
-    doi: '10.1126/scitranslmed.2023.0456',
+    title: 'Teaching patients to read their own lab results: a plain-language intervention',
+    authors: 'Mehta A., Okafor C.',
+    doi: '10.1136/afm.2023.0456',
   },
 ];
 
@@ -77,38 +77,38 @@ const trials = [
   {
     phase: 'Phase III',
     status: 'Active',
-    title: 'GENO-CV: Genomic Risk Stratification in Heart Failure',
-    enrollment: '2,400 patients',
-    sites: '18 clinical sites',
+    title: 'CARDIO-PREVENT: Lifestyle intervention in pre-hypertension',
+    enrollment: '3,100 patients',
+    sites: '22 clinical sites',
   },
   {
     phase: 'Phase II',
     status: 'Active',
-    title: 'HELIX-ONC: Personalized Oncology via AI-Guided Therapy Selection',
-    enrollment: '800 patients',
-    sites: '12 clinical sites',
+    title: 'DIET-RESET: Digital nutrition coaching in Type 2 diabetes',
+    enrollment: '640 patients',
+    sites: '8 clinics',
   },
   {
     phase: 'Phase I',
     status: 'Recruiting',
-    title: 'SYNTH-IMM: Synthetic Antibody Scaffold for Autoimmune Disorders',
-    enrollment: '60 patients',
-    sites: '4 clinical sites',
+    title: 'VAX-65: Shingles vaccine response in adults over 65',
+    enrollment: '120 volunteers',
+    sites: '3 sites',
   },
   {
     phase: 'Phase II',
     status: 'Completed',
-    title: 'PHARMA-GX: Pharmacogenomic-Guided Dosing in Pediatric Care',
-    enrollment: '1,200 patients',
-    sites: '9 clinical sites',
+    title: 'STEP-UP: Walking programs after cardiac events',
+    enrollment: '980 patients',
+    sites: '11 clinical sites',
   },
 ];
 
 const stats = [
-  { icon: BookOpen, value: '340+', label: 'Publications' },
-  { icon: FlaskConical, value: '48', label: 'Active Trials' },
-  { icon: Users, value: '92', label: 'Research Partners' },
-  { icon: Dna, value: '14', label: 'Patent Families' },
+  { icon: BookOpen, value: '24', label: 'Publications' },
+  { icon: FlaskConical, value: '6', label: 'Clinical Trials' },
+  { icon: Users, value: '9', label: 'Talks & Workshops' },
+  { icon: Dna, value: '2', label: 'Textbook Chapters' },
 ];
 
 export default function Research() {
@@ -119,17 +119,17 @@ export default function Research() {
         <div className="research-hero-content">
           <div className="research-chip">
             <span className="research-chip-dot" aria-hidden="true" />
-            <span className="research-chip-text">Research & Discovery</span>
+            <span className="research-chip-text">Publications & Talks</span>
           </div>
           <h1 className="research-title">
-            Pushing the boundaries of
+            Evidence-based care,
             <br />
-            <span className="highlight">what medicine can do.</span>
+            <span className="highlight">shared openly.</span>
           </h1>
           <p className="research-subtitle">
-            Our research programs span genomic medicine, immunotherapy, and
-            synthetic biology — translating fundamental discoveries into
-            clinical applications that improve patient outcomes worldwide.
+            Medicine moves fast — I stay current by publishing, teaching and
+            contributing to clinical trials. This is the academic side of the
+            practice, in the open for anyone to read.
           </p>
         </div>
       </section>
@@ -150,8 +150,8 @@ export default function Research() {
       {/* ---- Focus Areas ---- */}
       <section className="research-focus">
         <div className="research-section-header">
-          <span className="research-section-label">Focus Areas</span>
-          <h2 className="research-section-title">Where we direct our science.</h2>
+          <span className="research-section-label">Clinical Interests</span>
+          <h2 className="research-section-title">Where I focus my practice.</h2>
         </div>
         <div className="research-focus-grid">
           {focusAreas.map((area) => (
@@ -175,7 +175,7 @@ export default function Research() {
       <section className="research-trials">
         <div className="research-section-header">
           <span className="research-section-label">Clinical Trials</span>
-          <h2 className="research-section-title">Active and recent studies.</h2>
+          <h2 className="research-section-title">Studies I have contributed to.</h2>
         </div>
         <div className="research-trials-list">
           {trials.map((trial) => (
@@ -202,20 +202,20 @@ export default function Research() {
       <section className="research-cta">
         <div className="research-cta-content">
           <h2 className="research-cta-title">
-            Collaborate with our research team.
+            Have a research or media question?
           </h2>
           <p className="research-cta-desc">
-            Whether you are an academic institution, hospital network, or
-            biotech partner — we welcome research collaborations that advance
-            human health.
+            Medical students, journalists and fellow clinicians are welcome to
+            reach out — I answer thoughtful questions whenever the clinic day
+            allows.
           </p>
           <div className="research-cta-actions">
             <Link to="/contact" className="btn-primary">
-              Propose a Collaboration
+              Get in Touch
               <ArrowRight className="arrow-icon" size={18} strokeWidth={2} />
             </Link>
             <Link to="/technology" className="btn-secondary">
-              Our Technology
+              Visit the Clinic
             </Link>
           </div>
         </div>
@@ -225,7 +225,7 @@ export default function Research() {
       <section className="research-publications">
         <div className="research-section-header">
           <span className="research-section-label">Selected Publications</span>
-          <h2 className="research-section-title">Peer-reviewed contributions.</h2>
+          <h2 className="research-section-title">Papers I have authored.</h2>
         </div>
         <div className="research-pubs-list">
           {publications.map((pub) => (
