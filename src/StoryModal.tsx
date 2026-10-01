@@ -80,7 +80,7 @@ export default function StoryModal({ isOpen, onClose }: StoryModalProps) {
           </video>
         </div>
         <div className="story-modal-caption">
-          <h3>Meet Dr. Mehta</h3>
+          <h3>Meet Doctor's Name</h3>
           <p>
             Eighteen years of family medicine in one practice — see how Doctor
             Clinic puts listening before prescribing.

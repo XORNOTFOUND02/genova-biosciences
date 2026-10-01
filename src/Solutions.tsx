@@ -139,7 +139,7 @@ export default function Solutions() {
               <ArrowRight className="arrow-icon" size={18} strokeWidth={2} />
             </Link>
             <Link to="/about" className="btn-secondary">
-              About Dr. Mehta
+              About Doctor's Name
             </Link>
           </div>
         </div>

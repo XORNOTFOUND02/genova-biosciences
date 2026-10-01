@@ -75,7 +75,7 @@ const stats = [
 
 const team = [
   {
-    name: 'Aarav Mehta',
+    name: "Doctor's Name",
     role: 'Founder & Family Physician',
     bio: 'Board-certified in family medicine with 18 years of clinic experience and a weekly research habit.',
   },
@@ -104,7 +104,7 @@ export default function About() {
         <div className="about-hero-content">
           <div className="about-chip">
             <span className="about-chip-dot" aria-hidden="true" />
-            <span className="about-chip-text">About Dr. Mehta</span>
+            <span className="about-chip-text">About Doctor's Name</span>
           </div>
           <h1 className="about-title">
             Doctor, teacher, lifelong
@@ -112,7 +112,7 @@ export default function About() {
             <span className="highlight">student</span> of medicine.
           </h1>
           <p className="about-subtitle">
-            Dr. Aarav Mehta runs a solo family-medicine practice that blends
+            Doctor's Name runs a solo family-medicine practice that blends
             clinic time, teaching and preventive-care research — one patient,
             one honest conversation at a time.
           </p>

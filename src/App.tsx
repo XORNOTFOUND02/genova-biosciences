@@ -195,7 +195,7 @@ function Footer() {
           </div>
           <div className="footer-col">
             <h4>Practice</h4>
-            <Link to="/about">About Dr. Mehta</Link>
+            <Link to="/about">About Doctor's Name</Link>
             <Link to="/technology">Clinic & Facilities</Link>
             <Link to="/research">Publications</Link>
             <Link to="/careers">Patient Stories</Link>
@@ -261,7 +261,7 @@ function Home() {
 
           {/* Description */}
           <p className="hero-description">
-            Dr. Aarav Mehta runs a solo family-medicine practice built on
+            Doctor's Name runs a solo family-medicine practice built on
             thirty-minute appointments, honest answers and prevention first.
           </p>
 
@@ -280,7 +280,7 @@ function Home() {
               <span className="play-icon-wrapper" aria-hidden="true">
                 <Play className="play-icon" size={12} strokeWidth={2.5} />
               </span>
-              Meet Dr. Mehta
+              Meet Doctor's Name
             </button>
           </div>
         </div>
