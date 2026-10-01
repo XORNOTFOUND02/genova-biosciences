@@ -2,7 +2,13 @@
    Contact Page — Styles
    ============================================ */
 
+.contact-page {
+  position: relative;
+}
+
 .contact-hero {
+  position: relative;
+  z-index: 1;
   padding: 6rem var(--spacing-hero-x) 3rem;
   text-align: center;
   max-width: 900px;
@@ -60,6 +66,8 @@
 
 /* ---- Body Layout ---- */
 .contact-body {
+  position: relative;
+  z-index: 1;
   display: grid;
   grid-template-columns: 1.3fr 1fr;
   gap: 2.5rem;

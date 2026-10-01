@@ -1,6 +1,7 @@
 import { useState, useEffect, type FormEvent } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { ArrowRight, Mail, MapPin, Phone, Clock, CheckCircle } from 'lucide-react';
+import DnaHelix from './DnaHelix';
 import './Contact.css';
 
 interface FormData {
@@ -84,6 +85,8 @@ export default function Contact() {
 
   return (
     <div className="contact-page">
+      {/* Decorative animated DNA helix (display-only, no layout impact) */}
+      <DnaHelix />
       {/* ---- Hero ---- */}
       <section className="contact-hero">
         <div className="contact-hero-content">
